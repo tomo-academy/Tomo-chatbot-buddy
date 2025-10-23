@@ -190,3 +190,4 @@ export function ChatMenuItem({ chat }: ChatMenuItemProps) {
     </SidebarMenuItem>
   )
 }
+

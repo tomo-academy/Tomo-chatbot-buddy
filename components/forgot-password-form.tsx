@@ -4,7 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 
 import { createClient } from '@/lib/supabase/client'
-import { cn } from '@/lib/utils/index'
+import { cn } from '@/lib/utils'
 
 import { Button } from '@/components/ui/button'
 import {
@@ -105,3 +105,5 @@ export function ForgotPasswordForm({
     </div>
   )
 }
+
+

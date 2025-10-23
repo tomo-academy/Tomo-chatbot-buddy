@@ -244,3 +244,4 @@ export const SearchResultsImageSection: React.FC<
     false
   )
 }
+

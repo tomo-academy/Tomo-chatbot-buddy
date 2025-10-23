@@ -25,3 +25,4 @@ function IconLogo({ className }: IconLogoProps) {
 }
 
 export { IconLogo }
+

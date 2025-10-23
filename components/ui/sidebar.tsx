@@ -6,7 +6,7 @@ import { Slot } from '@radix-ui/react-slot'
 import { cva, VariantProps } from 'class-variance-authority'
 import { PanelLeft } from 'lucide-react'
 
-import { cn } from '@/lib/utils/index'
+import { cn } from '@/lib/utils'
 
 import { useIsMobile } from '@/hooks/use-mobile'
 
@@ -799,3 +799,4 @@ export {
   SidebarTrigger,
   useSidebar
 }
+

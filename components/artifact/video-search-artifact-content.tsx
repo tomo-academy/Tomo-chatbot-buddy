@@ -46,3 +46,4 @@ export function VideoSearchArtifactContent({ tool }: { tool: ToolInvocation }) {
     </div>
   )
 }
+

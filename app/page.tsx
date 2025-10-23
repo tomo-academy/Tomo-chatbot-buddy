@@ -9,3 +9,4 @@ export default async function Page() {
   const models = await getModels()
   return <Chat key={id} id={id} models={models} />
 }
+

@@ -67,3 +67,4 @@ export function ClearHistory({ empty }: ClearHistoryProps) {
     </AlertDialog>
   )
 }
+

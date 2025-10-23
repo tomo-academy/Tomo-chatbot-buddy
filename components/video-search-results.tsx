@@ -27,3 +27,4 @@ export function VideoSearchResults({ results }: VideoSearchResultsProps) {
 
   return <VideoResultGrid videos={videos} query={query} displayMode="chat" />
 }
+

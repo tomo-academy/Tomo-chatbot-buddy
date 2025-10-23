@@ -18,3 +18,4 @@ export function ReasoningContent({ reasoning }: { reasoning: string }) {
     </div>
   )
 }
+

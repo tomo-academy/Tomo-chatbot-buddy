@@ -34,3 +34,4 @@ export function SearchArtifactContent({ tool }: { tool: ToolInvocation }) {
     </div>
   )
 }
+

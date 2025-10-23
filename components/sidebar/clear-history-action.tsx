@@ -84,3 +84,4 @@ export function ClearHistoryAction({ empty }: ClearHistoryActionProps) {
     </DropdownMenu>
   )
 }
+

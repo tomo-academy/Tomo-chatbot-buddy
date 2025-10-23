@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 
 import { createClient } from '@/lib/supabase/client'
-import { cn } from '@/lib/utils/index'
+import { cn } from '@/lib/utils'
 
 import { Button } from '@/components/ui/button'
 import {
@@ -79,3 +79,4 @@ export function UpdatePasswordForm({
     </div>
   )
 }
+

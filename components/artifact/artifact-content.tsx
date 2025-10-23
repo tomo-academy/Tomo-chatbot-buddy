@@ -19,3 +19,4 @@ export function ArtifactContent({ part }: { part: Part | null }) {
       )
   }
 }
+

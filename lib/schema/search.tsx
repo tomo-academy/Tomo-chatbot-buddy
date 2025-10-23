@@ -68,3 +68,4 @@ export function getSearchSchemaForModel(fullModel: string) {
 }
 
 export type PartialInquiry = DeepPartial<typeof searchSchema>
+

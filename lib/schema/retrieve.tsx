@@ -6,3 +6,4 @@ export const retrieveSchema = z.object({
 })
 
 export type PartialInquiry = DeepPartial<typeof retrieveSchema>
+

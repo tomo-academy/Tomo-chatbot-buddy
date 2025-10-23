@@ -28,3 +28,4 @@ export const ToolBadge: React.FC<ToolBadgeProps> = ({
     </Badge>
   )
 }
+

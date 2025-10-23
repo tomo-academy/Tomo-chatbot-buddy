@@ -27,3 +27,4 @@ export const LogoSpinner = () => (
     <IconLogo className="w-4 h-4 animate-spin" />
   </div>
 )
+

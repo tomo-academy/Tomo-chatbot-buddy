@@ -22,3 +22,4 @@ export function ToolInvocationContent({
       return <div className="p-4">Details for this tool are not available</div>
   }
 }
+

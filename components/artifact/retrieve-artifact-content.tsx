@@ -50,3 +50,4 @@ export function RetrieveArtifactContent({ tool }: { tool: ToolInvocation }) {
     </div>
   )
 }
+

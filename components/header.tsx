@@ -38,3 +38,4 @@ export const Header: React.FC<HeaderProps> = ({ user }) => {
 }
 
 export default Header
+
