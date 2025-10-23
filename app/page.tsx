@@ -1,16 +1,11 @@
-"use client";
+import { generateId } from 'ai'
 
-import dynamicImport from 'next/dynamic';
+import { getModels } from '@/lib/config/models'
 
-const ChatApp = dynamicImport(() => import('@/components/ChatApp'), {
-  ssr: false,
-  loading: () => (
-    <div className="flex items-center justify-center h-screen">
-      <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-900"></div>
-    </div>
-  )
-});
+import { Chat } from '@/components/chat'
 
-export default function Home() {
-  return <ChatApp />;
+export default async function Page() {
+  const id = generateId()
+  const models = await getModels()
+  return <Chat key={id} id={id} models={models} />
 }

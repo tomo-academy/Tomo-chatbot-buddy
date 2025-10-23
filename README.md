@@ -1,89 +1,236 @@
-# ChatGPT Standalone Clone
+# TOMO AI BUDDY
 
-A standalone ChatGPT clone built with Next.js, Assistant UI, and the Vercel AI SDK.
+An AI-powered search engine with a generative UI.
 
-## Features
+![capture](/public/screenshot-2025-05-04.png)
 
-- 🤖 ChatGPT-like interface
-- 💬 Real-time streaming responses
-- 🎨 Beautiful dark theme UI
-- ⚡ Built with Next.js 15 and React 19
-- 🛡️ Type-safe with TypeScript
-- 📱 Responsive design
+## 🗂️ Overview
 
-## Quick Start
+- 🛠 [Features](#-features)
+- 🧱 [Stack](#-stack)
+- 🚀 [Quickstart](#-quickstart)
+- 🌐 [Deploy](#-deploy)
+- 🔎 [Search Engine](#-search-engine)
+- 💙 [Sponsors](#-sponsors)
+- 👥 [Contributing](#-contributing)
+- 📄 [License](#-license)
 
-1. **Install dependencies:**
-   ```bash
-   npm install --legacy-peer-deps
-   ```
+📝 Explore AI-generated documentation on [DeepWiki](https://deepwiki.com/miurla/morphic)
 
-2. **Set up environment variables:**
-   ```bash
-   cp .env.example .env.local
-   ```
-   
-   Add your OpenAI API key to `.env.local`:
-   ```
-   OPENAI_API_KEY=your_openai_api_key_here
-   ```
+## 🧪 Try v1.0.0 Beta
 
-3. **Start the development server:**
-   ```bash
-   npm run dev
-   ```
+Want to experience the next generation of TOMO AI BUDDY? The application is now available at [chat.tomoacademy.site](https://chat.tomoacademy.site)!
 
-4. **Open your browser:**
-   Navigate to [http://localhost:3000](http://localhost:3000)
+This major update includes exciting new features like advanced search modes, PostgreSQL database, enhanced UI, and much more. Learn more about what's new in [Issue #680](https://github.com/miurla/morphic/issues/680).
 
-## Project Structure
+Your feedback helps shape the future of TOMO AI BUDDY!
 
+## 🛠 Features
+
+### Core Features
+
+- AI-powered search with GenerativeUI
+- Natural language question understanding
+- Multiple search providers support (Tavily, SearXNG, Exa)
+- Model selection from UI (switch between available AI models)
+  - Reasoning models with visible thought process
+
+### Authentication
+
+- User authentication powered by [Supabase Auth](https://supabase.com/docs/guides/auth)
+- Supports Email/Password sign-up and sign-in
+- Supports Social Login with Google
+
+### Chat & History
+
+- Chat history functionality (Optional)
+- Share search results (Optional)
+- Redis support (Local/Upstash)
+
+### AI Providers
+
+The following AI providers are supported:
+
+- OpenAI (Default)
+- Google Generative AI
+- Azure OpenAI
+- Anthropic
+- Ollama
+- Groq
+- DeepSeek
+- Fireworks
+- xAI (Grok)
+- OpenAI Compatible
+
+Models are configured in `public/config/models.json`. Each model requires its corresponding API key to be set in the environment variables. See [Configuration Guide](docs/CONFIGURATION.md) for details.
+
+### Search Capabilities
+
+- URL-specific search
+- Video search support (Optional)
+- SearXNG integration with:
+  - Customizable search depth (basic/advanced)
+  - Configurable engines
+  - Adjustable results limit
+  - Safe search options
+  - Custom time range filtering
+
+### Additional Features
+
+- Docker deployment ready
+- Browser search engine integration
+
+## 🧱 Stack
+
+### Core Framework
+
+- [Next.js](https://nextjs.org/) - App Router, React Server Components
+- [TypeScript](https://www.typescriptlang.org/) - Type safety
+- [Vercel AI SDK](https://sdk.vercel.ai/docs) - Text streaming / Generative UI
+
+### Authentication & Authorization (Updated Category)
+
+- [Supabase](https://supabase.com/) - User authentication and backend services
+
+### AI & Search
+
+- [OpenAI](https://openai.com/) - Default AI provider (Optional: Google AI, Anthropic, Groq, Ollama, Azure OpenAI, DeepSeek, Fireworks)
+- [Tavily AI](https://tavily.com/) - Default search provider
+- Alternative providers:
+  - [SearXNG](https://docs.searxng.org/) - Self-hosted search
+  - [Exa](https://exa.ai/) - Neural search
+  - [Firecrawl](https://firecrawl.dev/) - Web, news, and image search with crawling, scraping, LLM-ready extraction, and [open source](https://github.com/firecrawl/firecrawl).
+
+### Data Storage
+
+- [Upstash](https://upstash.com/) - Serverless Redis
+- [Redis](https://redis.io/) - Local Redis option
+
+### UI & Styling
+
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
+- [shadcn/ui](https://ui.shadcn.com/) - Re-usable components
+- [Radix UI](https://www.radix-ui.com/) - Unstyled, accessible components
+- [Lucide Icons](https://lucide.dev/) - Beautiful & consistent icons
+
+## 🚀 Quickstart
+
+### 1. Fork and Clone repo
+
+Fork the repo to your Github account, then run the following command to clone the repo:
+
+```bash
+git clone git@github.com:[YOUR_GITHUB_ACCOUNT]/tomo-ai-buddy.git
 ```
-chatgpt-standalone/
-├── app/
-│   ├── api/chat/route.ts    # ChatGPT API endpoint
-│   ├── globals.css          # Global styles
-│   ├── layout.tsx           # Root layout
-│   └── page.tsx             # Home page
-├── components/
-│   ├── ui/                  # Reusable UI components
-│   ├── ChatGPT.tsx          # Main chat interface
-│   └── ChatProvider.tsx     # Chat runtime provider
-└── lib/
-    └── utils.ts             # Utility functions
+
+### 2. Install dependencies
+
+```bash
+cd tomo-ai-buddy
+bun install
 ```
 
-## Tech Stack
+### 3. Configure environment variables
 
-- **Framework:** Next.js 15
-- **UI Library:** Assistant UI + Radix UI
-- **AI SDK:** Vercel AI SDK
-- **Styling:** Tailwind CSS
-- **TypeScript:** Full type safety
-- **API:** OpenAI GPT-4
+```bash
+cp .env.local.example .env.local
+```
 
-## Usage
+Fill in the required environment variables in `.env.local`:
 
-1. Type your message in the input field
-2. Press Enter or click Send
-3. Watch as ChatGPT responds in real-time
-4. Use the action buttons to copy, regenerate, or edit messages
+```bash
+# Required for Core Functionality
+OPENAI_API_KEY=     # Get from https://platform.openai.com/api-keys
+TAVILY_API_KEY=     # Get from https://app.tavily.com/home
+```
 
-## Customization
+For optional features configuration (Redis, SearXNG, etc.), see [CONFIGURATION.md](./docs/CONFIGURATION.md)
 
-- **Modify the UI:** Edit components in `/components/ChatGPT.tsx`
-- **Change the model:** Update the model in `/app/api/chat/route.ts`
-- **Add features:** Extend the chat functionality with additional AI SDK features
+### 4. Run app locally
 
-## Deployment
+#### Using Bun
 
-Deploy to Vercel with one click:
+```bash
+bun dev
+```
 
-1. Push to GitHub
-2. Connect to Vercel
-3. Add your `OPENAI_API_KEY` environment variable
-4. Deploy!
+#### Using Docker
 
-## License
+```bash
+docker compose up -d
+```
 
-MIT License - feel free to use this for your own projects!
+Visit http://localhost:3000 in your browser.
+
+## 🌐 Deploy
+
+Host your own live version of TOMO AI BUDDY with Vercel, Cloudflare Pages, or Docker.
+
+### Vercel
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fmiurla%2Fmorphic&env=OPENAI_API_KEY,TAVILY_API_KEY,UPSTASH_REDIS_REST_URL,UPSTASH_REDIS_REST_TOKEN)
+
+### Docker Prebuilt Image
+
+Prebuilt Docker images are available on GitHub Container Registry:
+
+```bash
+docker pull ghcr.io/miurla/morphic:latest
+```
+
+You can use it with docker-compose:
+
+```yaml
+services:
+  morphic:
+    image: ghcr.io/miurla/morphic:latest
+    env_file: .env.local
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./models.json:/app/public/config/models.json # Optional: Override default model configuration
+```
+
+The default model configuration is located at `public/config/models.json`. For Docker deployment, you can create `models.json` alongside `.env.local` to override the default configuration.
+
+## 🔎 Search Engine
+
+### Setting up the Search Engine in Your Browser
+
+If you want to use TOMO AI BUDDY as a search engine in your browser, follow these steps:
+
+1. Open your browser settings.
+2. Navigate to the search engine settings section.
+3. Select "Manage search engines and site search".
+4. Under "Site search", click on "Add".
+5. Fill in the fields as follows:
+   - **Search engine**: TOMO AI BUDDY
+   - **Shortcut**: tomo-ai-buddy
+   - **URL with %s in place of query**: `https://chat.tomoacademy.site/search?q=%s`
+6. Click "Add" to save the new search engine.
+7. Find "TOMO AI BUDDY" in the list of site search, click on the three dots next to it, and select "Make default".
+
+This will allow you to use TOMO AI BUDDY as your default search engine in the browser.
+
+## 💙 Sponsors
+
+This project is proudly supported by:
+
+<a href="https://vercel.com/oss">
+  <img alt="Vercel OSS Program" src="https://vercel.com/oss/program-badge.svg" />
+</a>
+
+## 👥 Contributing
+
+We welcome contributions to TOMO AI BUDDY! Whether it's bug reports, feature requests, or pull requests, all contributions are appreciated.
+
+Please see our [Contributing Guide](CONTRIBUTING.md) for details on:
+
+- How to submit issues
+- How to submit pull requests
+- Commit message conventions
+- Development setup
+
+## 📄 License
+
+This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
