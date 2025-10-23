@@ -9,7 +9,7 @@ import { Model } from '@/lib/types/models'
 import { getCookie, setCookie } from '@/lib/utils/cookies'
 import { isReasoningModel } from '@/lib/utils/registry'
 
-import { createModelId } from '../lib/utils'
+import { createModelId } from '@/lib/utils'
 
 import { Button } from './ui/button'
 import {
